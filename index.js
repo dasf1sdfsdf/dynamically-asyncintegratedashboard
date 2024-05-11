@@ -1,5 +1,10 @@
-function kthSmallest(matrix, k) {
-  const flatten = matrix.reduce((acc, row) => acc.concat(row), []);
-  flatten.sort((a, b) => a - b);
-  return flatten[k - 1];
+function hasCycle(head) {
+  let slow = head;
+  let fast = head;
+  while (fast && fast.next) {
+    slow = slow.next;
+    fast = fast.next.next;
+    if (slow === fast) return true;
+  }
+  return false;
 }
